@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="260.0" layoutY="43.0" text="Listado de personal">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="addEmployeeBtn" layoutX="423.0" layoutY="324.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Agregar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="employeeListTV" layoutX="30.0" layoutY="78.0" prefHeight="155.0" prefWidth="612.0">
+        <columns>
+            <TableColumn minWidth="0.0" prefWidth="0.0" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="birthdayBP" layoutX="190.0" layoutY="345.0" />
+      <Label layoutX="30.0" layoutY="241.0" text="Agregar empleado:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="372.0" layoutY="272.0" text="Contraseña:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="274.0" text="Nombre:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="311.0" text="Cédula:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="342.0" prefHeight="30.0" prefWidth="129.0" text="Fecha de nacimiento:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTF" layoutX="149.0" layoutY="269.0" />
+      <TextField fx:id="idTF" layoutX="149.0" layoutY="306.0" />
+      <PasswordField fx:id="passPF" layoutX="463.0" layoutY="271.0" />
+      <Button fx:id="changePassBtn" layoutX="426.0" layoutY="357.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="174.0" text="Cambiar contraseña">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="backBTn" layoutX="513.0" layoutY="324.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Volver">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

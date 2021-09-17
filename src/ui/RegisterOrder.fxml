@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="addOrderBtn" layoutX="268.0" layoutY="283.0" mnemonicParsing="false" text="Aceptar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="220.0" layoutY="41.0" text="Registro de pedido">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="117.0" text="Platillo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="223.0" text="Persona que realiza el pedido:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="171.0" text="Cantidad:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="dishCB" layoutX="245.0" layoutY="115.0" prefHeight="25.0" prefWidth="205.0" />
+      <TextField fx:id="amountTF" layoutX="245.0" layoutY="169.0" prefHeight="25.0" prefWidth="205.0" />
+      <TextField fx:id="clientNameTF" layoutX="355.0" layoutY="221.0" prefHeight="25.0" prefWidth="195.0" />
+   </children>
+</AnchorPane>
