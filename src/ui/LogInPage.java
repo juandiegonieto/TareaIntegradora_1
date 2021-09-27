@@ -3,9 +3,11 @@ package ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -43,7 +45,21 @@ public class LogInPage extends Stage {
 	
 	public void init() {
 		logInBtn.setOnAction(event-> {
-			
+			for(int i=0; i<EmployeeArea.employees.getData().size();i++) {
+				if(idTF.getText() != null && passwordPF.getText() != null) {
+					if(passwordPF.getText().equals(EmployeeArea.employees.getData().get(i).getPassword())
+							&& idTF.getText().equals(EmployeeArea.employees.getData().get(i).getId())) {
+						PrincipalMenu principalMenu = new PrincipalMenu();
+						principalMenu.show();
+						hide();
+					}
+				} else {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setHeaderText(null);
+					alert.setContentText("Usuario y/o contraseña incorrectos.");
+					alert.showAndWait();
+				}
+			}
 		});
 	}
 	

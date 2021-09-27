@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="440.0" layoutY="28.0" text="Carta">
@@ -33,13 +32,13 @@
          </font>
       </Label>
       <TextField fx:id="numberIngredientsTF" layoutX="465.0" layoutY="331.0" prefHeight="25.0" prefWidth="50.0" />
-      <Label fx:id="ingredientNameLbl" layoutX="56.0" layoutY="385.0" prefHeight="47.0" prefWidth="92.0" text="Nombre del ingrediente #:" wrapText="true">
+      <Label fx:id="ingredientNameLbl" layoutX="56.0" layoutY="385.0" prefHeight="47.0" prefWidth="92.0" text="Nombre del ingrediente 1:" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
       <TextField fx:id="ingredientNameTF" layoutX="148.0" layoutY="396.0" />
-      <Label fx:id="ingrdientAmountLbl" layoutX="56.0" layoutY="452.0" prefHeight="47.0" prefWidth="92.0" text="Cantidad del ingrediente #:" wrapText="true">
+      <Label fx:id="ingrdientAmountLbl" layoutX="56.0" layoutY="452.0" prefHeight="47.0" prefWidth="92.0" text="Cantidad del ingrediente 1:" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>

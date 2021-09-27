@@ -1,21 +1,20 @@
 package ui;
 
-import java.time.Month;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Employee;
 import model.EmployeeData;
-import model.Ingredient;
 
 public class EmployeeArea extends Stage {
 	
@@ -86,15 +85,43 @@ public class EmployeeArea extends Stage {
 	}
 
 	public void addEmployee() {
-		String name = nameTF.getText();
-		int id = Integer.parseInt(idTF.getText());
-		int month = birthdayBP.getValue().getMonthValue();
-		int day = birthdayBP.getValue().getDayOfMonth();
-		int year = birthdayBP.getValue().getYear();
-		String birthday = day+"/"+month+"/"+year;
-		String password = passPF.getText();
-		Employee e = new Employee(name, id, birthday, password);
-		employees.getData().add(e);
+		if(nameTF.getText() != null) {
+			String name = nameTF.getText();
+			if(idTF.getText() != null) {
+				int id = Integer.parseInt(idTF.getText());
+				if(birthdayBP != null) {
+					int month = birthdayBP.getValue().getMonthValue();
+					int day = birthdayBP.getValue().getDayOfMonth();
+					int year = birthdayBP.getValue().getYear();
+					String birthday = day+"/"+month+"/"+year;
+					if(passPF.getText() != null) {
+						String password = passPF.getText();
+						Employee e = new Employee(name, id, birthday, password);
+						employees.getData().add(e);
+					} else {
+						Alert alert = new Alert(AlertType.ERROR);
+						alert.setHeaderText(null);
+						alert.setContentText("Para continuar, escriba la contraseña.");
+						alert.showAndWait();
+					}
+				} else {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setHeaderText(null);
+					alert.setContentText("Para continuar, complete la fecha.");
+					alert.showAndWait();
+				}
+			} else {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setHeaderText(null);
+				alert.setContentText("Para continuar, escriba la cédula.");
+				alert.showAndWait();
+			}	
+		} else {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setHeaderText(null);
+			alert.setContentText("Para continuar, escriba el nombre.");
+			alert.showAndWait();
+		}
 	}
 	
 }

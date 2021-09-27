@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 
 public class IngredientsData {
 	
-private ObservableList<Ingredient> ingredients;
+	private ObservableList<Ingredient> ingredients;
 	
 	
 	public IngredientsData() {

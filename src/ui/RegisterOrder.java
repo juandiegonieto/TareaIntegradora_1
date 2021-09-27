@@ -1,5 +1,7 @@
 package ui;
 
+import java.util.UUID;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -52,7 +54,8 @@ public class RegisterOrder extends Stage {
 	}
 	
 	public void addOrder() {
-		
+		String code = UUID.randomUUID().toString();
+		String state = "Pendiente";
 	}	
 	
 }

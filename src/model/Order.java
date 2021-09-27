@@ -1,23 +1,40 @@
 package model;
 
-public class Order {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Order implements Serializable {
 	
-		private int code;
+	private static final long serialVersionUID = 1L;
+		private String code;
 		private String state;
 		private String orderDate;
+		private ArrayList<OrderDish> orderDishes;
 		
-		public Order(int code, String state, String orderDate) {
+		public Order() {
+			
+		}
+		
+		public Order(String code, String state, String orderDate, ArrayList<OrderDish> orderDishes) {
+			super();
+			this.code = code;
+			this.state = state;
+			this.orderDate = orderDate;
+			this.orderDishes = orderDishes;
+		}
+
+		public Order(String code, String state, String orderDate) {
 			super();
 			this.code = code;
 			this.state = state;
 			this.orderDate = orderDate;
 		}
 
-		public int getCode() {
+		public String getCode() {
 			return code;
 		}
 
-		public void setCode(int code) {
+		public void setCode(String code) {
 			this.code = code;
 		}
 
@@ -37,6 +54,12 @@ public class Order {
 			this.orderDate = orderDate;
 		}
 		
-		
+		public ArrayList<OrderDish> getDishes() {
+			return orderDishes;
+		}
+
+		public void setDishes(ArrayList<OrderDish> orderDishes) {
+			this.orderDishes = orderDishes;
+		}
 		
 }

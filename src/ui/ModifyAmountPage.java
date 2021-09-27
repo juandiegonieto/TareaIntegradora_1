@@ -3,8 +3,10 @@ package ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class ModifyAmountPage extends Stage{
@@ -37,12 +39,23 @@ public class ModifyAmountPage extends Stage{
 	
 	public void init() {
 		saveBtn.setOnAction(event-> {
-			String ingredientName = ingredientNameTF.getText();
-			int newAmount = Integer.parseInt(newAmountTF.getText());
-			for(int i=0; i<InventoryPage.ingredients.getData().size(); i++) {
+			String ingredientName = "";
+			if(ingredientNameTF.getText() != null) {
+				ingredientName = ingredientNameTF.getText();
+			}else {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setHeaderText(null);
+				alert.setContentText("Para continaur, escriba un ingrediente existente.");
+				alert.showAndWait();
+			}
+			int newAmount = 0;
+			if(newAmountTF.getText() != null) {
+				newAmount = Integer.parseInt(newAmountTF.getText());
+			}
+			for(int i=0; i<InventoryPage.ingredients.getData().size(); i++) {	
 				if(InventoryPage.ingredients.getData().get(i).getName() == ingredientName) {
 					InventoryPage.ingredients.getData().get(i).setAmount(newAmount);
-				}
+				} 
 			}
 		});
 		backBtn.setOnAction(event-> {
